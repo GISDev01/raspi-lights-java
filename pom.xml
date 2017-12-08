@@ -4,15 +4,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gisdev01</groupId>
-    <artifactId>treelights</artifactId>
+    <artifactId>raspi-lights-java</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
+    <name>raspi-lights-java</name>
+    <description>Spring Boot web app which will be deployed to a Raspi Zero W and will control a set of relays that are in serial with Christmas lights</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.0.BUILD-SNAPSHOT</version>
+        <version>1.5.9.RELEASE</version>
     </parent>
-
 
 
     <repositories>
@@ -26,6 +28,8 @@
             <url>http://repo.spring.io/milestone</url>
         </repository>
     </repositories>
+
+
     <pluginRepositories>
         <pluginRepository>
             <id>spring-snapshots</id>
@@ -36,4 +40,28 @@
             <url>http://repo.spring.io/milestone</url>
         </pluginRepository>
     </pluginRepositories>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
