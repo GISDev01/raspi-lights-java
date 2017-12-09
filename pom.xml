@@ -61,6 +61,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- Dev Tools for hot reloads of web app while developing -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
 
         <!-- Allows us control the RasPi GPIO pins: https://github.com/Pi4J/pi4j-->
         <dependency>
