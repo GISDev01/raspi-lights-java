@@ -4,6 +4,52 @@
     <title>Frontend Static Page</title>
 </head>
 <body>
-Frontend Static index.html Page to turn lights on and off.
-</body>
+<div id='root'></div>
+
+<script src="https://fb.me/react-15.0.1.js"></script>
+<script src="https://fb.me/react-dom-15.0.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+<script type="text/babel">
+
+    var LightSwitch = React.createClass({
+        render: function() {
+            return (
+                    <tr>
+                        <td>{this.props.lightswitch.name}</td>
+                        <td>{this.props.lightswitch.state}</td>
+                    </tr>);
+        }
+    });
+
+    var LightSwitchTable = React.createClass({
+        render: function() {
+            var rows = [];
+            this.props.lightswitches.forEach(function(lightswitch) {
+                rows.push(<LightSwitch lightswitch={lightswitch} />);
+            });
+            return (
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th><th>State</th>
+                        </tr>
+                        </thead>
+                        <tbody>{rows}</tbody>
+                    </table>);
+        }
+    });
+
+
+    var LIGHTSWITCHES = [
+        {name: 'Christmas Tree', state: 'on'},
+        {name: 'Front Lawn Lights', state: 'on'},
+        {name: 'Roof Lights', state: 'on'}
+    ];
+
+
+    ReactDOM.render(
+            <LightSwitchTable lightswitches={LIGHTSWITCHES}/>, document.getElementById('root')
+    );
+</script></body>
 </html>
