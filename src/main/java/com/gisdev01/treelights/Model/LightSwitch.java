@@ -1,4 +1,4 @@
-package com.gisdev01.treelights;
+package com.gisdev01.treelights.Model;
 
 import lombok.Data;
 
